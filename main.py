@@ -44,10 +44,13 @@ def susy_for_2(path_main,path_sync):
             if os.path.isdir(v+ "\\" + i) == False and os.path.isfile(v+ "\\" + i) == False:
                 del_cat_or_file(ass_path(path_main,path_sync,v) + "\\" + i)
                 
-# Синхронизация двух и более каталогов
+# Считывание каталогов для синхронизации
 config_file = open("config.txt")
 Catalogs = config_file.read().splitlines()
 config_file.close()
 
-for i in Catalogs[1:]:
-    susy_for_2(Catalogs[0],i)
+# Бесконечный цикл для синхронизации каждые 10 секунд
+while 0<1:
+    for i in Catalogs[1:]:
+        susy_for_2(Catalogs[0],i)
+    time.sleep(10) 
