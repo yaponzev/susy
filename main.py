@@ -81,13 +81,17 @@ T = 0.02 # ожидание между шагами
 T_SYNC = 10 # ожидание между синхронизациями в секундах
 N = 1 
 K = len(Catalogs)
-
+s = 0
 # Двигаясь по дереву смотрим на N каталог
 while 0<1:
-    for i in range(T_SYNC,0,-1):
-        clear_output(wait=True)
-        print("До синхронизации осталось ",i," c")
-        time.sleep(1)
+    """
+    if s == 0:
+            for i in range(T_SYNC,0,-1):
+                clear_output(wait=True)
+                print("До синхронизации осталось ",i," c")
+                time.sleep(1)
+    s = (s + 1)%(K+1)
+    """
     
     clear_output(wait=True)
     print("Синхронизация")
